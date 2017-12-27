@@ -1,10 +1,6 @@
 package io.kfun
 
 sealed class Try<out T> {
-    
-    abstract fun isSuccess(): Boolean
-
-    abstract fun isFailure(): Boolean
 
     companion object {
         operator fun <T> invoke(body: () -> T): Try<T> {
@@ -15,6 +11,10 @@ sealed class Try<out T> {
             }
         }
     }
+
+    abstract fun isSuccess(): Boolean
+
+    abstract fun isFailure(): Boolean
 
     fun <U> map(f: (T) -> U): Try<U> {
         return when (this) {
