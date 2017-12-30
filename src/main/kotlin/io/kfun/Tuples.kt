@@ -13,3 +13,6 @@ data class Tuple2<out A, out B>(val _1: A, val _2: B)
 data class Tuple3<out A, out B, out C>(val _1: A, val _2: B, val _3: C)
 data class Tuple4<out A, out B, out C, out D>(val _1: A, val _2: B, val _3: C, val _4: D)
 data class Tuple5<out A, out B, out C, out D, out E>(val _1: A, val _2: B, val _3: C, val _4: D, val _5: E)
+
+typealias Pair<A, B> = Tuple2<A, B>
+typealias Triple<A, B, C> = Tuple3<A, B, C>

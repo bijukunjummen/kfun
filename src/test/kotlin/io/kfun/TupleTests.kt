@@ -41,6 +41,13 @@ class TupleTests {
     }
 
     @Test
+    fun `should be able to use Pair as a standin for Tuple2`() {
+        val pair = Pair("elem1", "elem2")
+        assertThat(pair._1).isEqualTo("elem1")
+        assertThat(pair._2).isEqualTo("elem2")
+    }
+
+    @Test
     fun `should be able to create a tuple with 3 elements of different types`() {
         val tup = Tuple3("elem1", "elem2", "elem3")
         assertThat(tup._1).isEqualTo("elem1")
@@ -61,6 +68,14 @@ class TupleTests {
         assertThat(tup._1).isEqualTo("elem1")
         assertThat(tup._2).isEqualTo("elem2")
         assertThat(tup._3).isEqualTo("elem3")
+    }
+
+    @Test
+    fun `should be able to use Triple as a standin for Tuple3`() {
+        val trip = Triple("elem1", "elem2", "elem3")
+        assertThat(trip._1).isEqualTo("elem1")
+        assertThat(trip._2).isEqualTo("elem2")
+        assertThat(trip._3).isEqualTo("elem3")
     }
 
     @Test
@@ -96,7 +111,7 @@ class TupleTests {
         assertThat(tup._3).isEqualTo("elem3")
         assertThat(tup._4).isEqualTo("elem4")
         assertThat(tup._5).isEqualTo("elem5")
-        
+
         val (e1, e2, e3, e4, e5) = tup
         assertThat(e1).isEqualTo("elem1")
         assertThat(e2).isEqualTo("elem2")
@@ -114,4 +129,5 @@ class TupleTests {
         assertThat(tup._4).isEqualTo("elem4")
         assertThat(tup._5).isEqualTo("elem5")
     }
+
 }
