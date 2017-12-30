@@ -15,6 +15,8 @@ plugins {
 }
 
 apply plugin: "org.junit.platform.gradle.plugin"
+apply plugin: 'maven'
+apply plugin: 'signing'
 
 group = "com.github.bijukunjummen"
 version = '0.0.1-SNAPSHOT'
@@ -39,4 +41,48 @@ dependencies {
     testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0")
     testCompile("org.assertj:assertj-core:3.8.0")
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name project.name
+                packaging 'jar'
+                description 'A collection of functional types for Kotlin'
+                url 'https://github.com/bijukunjummen/kfun'
+
+                scm {
+                    connection 'scm:git:https://github.com/bijukunjummen/kfun'
+                    developerConnection 'scm:git:https://github.com/bijukunjummen/kfun'
+                    url 'https://github.com/bijukunjummen/kfun'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'bijukunjummen'
+                        name 'Biju Kunjummen'
+                        email 'biju.kunjummen@gmail.com'
+                    }
+                }
+            }
+        }
+    }
 }
