@@ -16,7 +16,7 @@ class TupleTests {
 
     @Test
     fun `should be able to create Tuple1 with a utility method`() {
-        val tup = Tuple.of("elem1")
+        val tup = Tuple("elem1")
 
         assertThat(tup._1).isEqualTo("elem1")
     }
@@ -35,7 +35,7 @@ class TupleTests {
 
     @Test
     fun `should be able to create Tuple2 with a utility method`() {
-        val tup = Tuple.of("elem1", "elem2")
+        val tup = Tuple("elem1", "elem2")
         assertThat(tup._1).isEqualTo("elem1")
         assertThat(tup._2).isEqualTo("elem2")
     }
@@ -64,7 +64,7 @@ class TupleTests {
 
     @Test
     fun `should be able to create Tuple3 with a utility method`() {
-        val tup = Tuple.of("elem1", "elem2", "elem3")
+        val tup = Tuple("elem1", "elem2", "elem3")
         assertThat(tup._1).isEqualTo("elem1")
         assertThat(tup._2).isEqualTo("elem2")
         assertThat(tup._3).isEqualTo("elem3")
@@ -96,7 +96,7 @@ class TupleTests {
 
     @Test
     fun `should be able to create Tuple4 with a utility method`() {
-        val tup = Tuple.of("elem1", "elem2", "elem3", "elem4")
+        val tup = Tuple("elem1", "elem2", "elem3", "elem4")
         assertThat(tup._1).isEqualTo("elem1")
         assertThat(tup._2).isEqualTo("elem2")
         assertThat(tup._3).isEqualTo("elem3")
@@ -122,7 +122,7 @@ class TupleTests {
 
     @Test
     fun `should be able to create Tuple5 with a utility method`() {
-        val tup = Tuple.of("elem1", "elem2", "elem3", "elem4", "elem5")
+        val tup = Tuple("elem1", "elem2", "elem3", "elem4", "elem5")
         assertThat(tup._1).isEqualTo("elem1")
         assertThat(tup._2).isEqualTo("elem2")
         assertThat(tup._3).isEqualTo("elem3")

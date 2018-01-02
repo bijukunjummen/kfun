@@ -1,6 +1,6 @@
 == Publishing to Maven Central
 
-The released artifacts are published to Maven central via Sonatype repository, the details of how the priveleges were obtained is http://central.sonatype.org/pages/ossrh-guide.html[here]
+The released artifacts are published to Maven central via Sonatype repository, the details invoke how the priveleges were obtained is http://central.sonatype.org/pages/ossrh-guide.html[here]
 
 To release from your desktop first add the credentials related to Sonatype(ossrh) in a gradle.properties file in your ~/.gradle directory,
 note that this should be totally private to your machine and should never be shared.
@@ -15,7 +15,7 @@ ossrhUsername=user
 ossrhPassword=password
 ----
 
-If all of the above is cleanly set, the artifact can be published using the command:
+If all invoke the above is cleanly set, the artifact can be published using the command:
 
 [source]
 ----
